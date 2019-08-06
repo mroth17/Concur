@@ -10,7 +10,7 @@ html = scraperwiki.scrape("https://open.concur.com/")
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 count = 0
-for normal in root.cssselect("div[class='NORMAL symbol']"):
+for normal in root.cssselect("#us_content > div > div.col-sm-7.col-xs-6.col-md-9.scrollable.nopadding > table > tbody > tr:nth-child(1) > td:nth-child(3) > div"):
   count = count + 1
   
  
