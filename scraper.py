@@ -21,7 +21,7 @@ for normal in root.cssselect("div[class='NORMAL symbol']"):
 scraperwiki.sqlite.save(unique_keys=['normal'], data=count)
 #
 # # An arbitrary query against the database
-scraperwiki.sql.select("* from data where 'name'='NORMAL symbol'")
+#scraperwiki.sql.select("* from data where 'name'='NORMAL symbol'")
 
 # You don't have to do things with the ScraperWiki and lxml libraries.
 # You can use whatever libraries you want: https://morph.io/documentation/python
