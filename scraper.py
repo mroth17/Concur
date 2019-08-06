@@ -9,10 +9,16 @@ html = scraperwiki.scrape("https://open.concur.com/")
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-root.cssselect("div[class='NORMAL symbol']")
+count = 0
+for normal in root.cssselect("div[class='NORMAL symbol']"):
+  count = count + 1
+  
+ 
+  
+  
 #
 # # Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(root)
+scraperwiki.sqlite.save(unique_keys=['normal'], data=count)
 #
 # # An arbitrary query against the database
 scraperwiki.sql.select("* from data where 'name'='NORMAL symbol'")
