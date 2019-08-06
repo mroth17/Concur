@@ -12,7 +12,7 @@ root = lxml.html.fromstring(html)
 root.cssselect("div[class='NORMAL symbol']")
 #
 # # Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(unique_keys=['class'], data={"name": "susan", })
+scraperwiki.sqlite.save(root)
 #
 # # An arbitrary query against the database
 scraperwiki.sql.select("* from data where 'name'='NORMAL symbol'")
